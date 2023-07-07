@@ -1,0 +1,2 @@
+#!/bin/bash
+env -i bash --noprofile --norc -c 'source /opt/ros/noetic/setup.bash && rosdep install --from-paths src --ignore-src -r -y && catkin_make && source devel/setup.bash && roslaunch zhw_jaka_bridge start.launch'

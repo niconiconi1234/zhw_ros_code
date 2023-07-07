@@ -1,0 +1,26 @@
+<!-- 使用前，需要去jaka_ros_driver/launch/start.launch将robot_ip修改为JAKA电控柜的ip-->
+<launch>
+    <group ns="jaka_wrapper">
+        <include file="$(find jaka_ros_driver)/launch/start.launch"></include>
+
+        <!-- 控制机械臂爪子移动的wrapper-->
+        <node name="move_line_wrapper" pkg="zhw_jaka_wrapper" type="move_line_wrapper.py"
+            output="screen">
+            <!-- 机械臂爪子（末端）的roll pitch yaw，可以使机械臂的爪子旋转到水平位置
+            <param name="gripper_roll" value="-1.8354524358075202"></param>
+            <param name="gripper_pitch" value="0.8873894419466293"></param>
+            <param name="gripper_yaw" value="1.7690216118689484"></param> -->
+
+            <!-- 机械臂爪子移动的速度和加速度，没有什么特殊需求的话就写两个固定的值，单位为m/s和m/s^2-->
+            <param name="move_vel" value="0.5"></param>
+            <param name="move_acc" value="0.3"></param>
+        </node>
+
+        <!-- 控制机械臂爪子松紧的wrapper-->
+        <node name="ag95_gripper_wrapper" pkg="zhw_jaka_wrapper" type="ag95_gripper_wrapper.py"
+            output="screen">
+            <param name="ag95_gripper_ip" value="arm-gripper.hua-juan.top"></param>
+            <param name="ag95_gripper_port" value="8888"></param>
+        </node>
+    </group>
+</launch>

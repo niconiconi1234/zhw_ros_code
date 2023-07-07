@@ -1,0 +1,6 @@
+# 将机械臂的末端移动到空间的[x,y,z,r,p,y]处，单位为米
+float32[] pose
+---
+# 是否成功以及对应的消息
+bool success
+string message

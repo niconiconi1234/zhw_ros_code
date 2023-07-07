@@ -1,0 +1,7 @@
+<launch>
+    <group ns="realsense">
+        <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+            <arg name="initial_reset" value="false"></arg>
+        </include>
+    </group>
+</launch>
