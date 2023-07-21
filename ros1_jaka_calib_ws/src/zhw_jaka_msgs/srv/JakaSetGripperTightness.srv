@@ -1,0 +1,5 @@
+# 0.0为最松，100为最紧
+float64 tightness
+---
+bool success
+string message

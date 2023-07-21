@@ -1,0 +1,10 @@
+[submodule "ros1_jaka_calib_ws/src/ar_track_alvar"]
+	path = ros1_jaka_calib_ws/src/ar_track_alvar
+	url = https://github.com/ros-perception/ar_track_alvar.git
+	branch = noetic-devel
+[submodule "ros1_jaka_calib_ws/src/jaka_robot"]
+	path = ros1_jaka_calib_ws/src/jaka_robot
+	url = git@github.com:niconiconi1234/jaka_robot.git
+[submodule "ros1_jaka_calib_ws/src/handeye-calib"]
+	path = ros1_jaka_calib_ws/src/handeye-calib
+	url = git@gitee.com:zhj6848/handeye-calib.git

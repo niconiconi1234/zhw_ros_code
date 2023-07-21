@@ -1,0 +1,11 @@
+<launch>
+    <!-- 控制机械臂本体移动的wrapper-->
+    <node name="jaka_body_wrapper" pkg="zhw_jaka_wrapper" type="jaka_body_wrapper.py" output="screen"></node>
+    <group ns="zhw_jaka_wrapper">
+        <!-- 控制机械臂爪子松紧的wrapper-->
+        <node name="ag95_gripper_wrapper" pkg="zhw_jaka_wrapper" type="ag95_gripper_wrapper.py" output="screen">
+            <param name="ag95_gripper_ip" value="arm-gripper.hua-juan.top"></param>
+            <param name="ag95_gripper_port" value="8888"></param>
+        </node>
+    </group>
+</launch>

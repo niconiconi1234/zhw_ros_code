@@ -1,0 +1,5 @@
+# joint_values[0], joint_values[1], joint_values[2], joint_values[3], joint_values[4], joint_values[5]分别代表关节1～6的旋转角度，单位为弧度
+float32[] joint_values
+---
+bool success
+string message

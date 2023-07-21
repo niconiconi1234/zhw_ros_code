@@ -1,0 +1,5 @@
+# 根据物体上贴的二维码标签取货
+int64 markerId
+---
+bool success
+string message

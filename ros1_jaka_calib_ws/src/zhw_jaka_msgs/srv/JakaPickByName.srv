@@ -1,0 +1,5 @@
+# 根据物体名字取物
+string name
+---
+bool success
+string message

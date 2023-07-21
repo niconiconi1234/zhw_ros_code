@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find jaka_planner)/launch/moveit_server.launch" />
+    <include file="$(find jaka_zu7_moveit_config)/launch/demo.launch" />
+    
+</launch>

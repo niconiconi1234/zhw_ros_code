@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find jaka_launch)/launch/start.launch"/>
+    <include file="$(find zhw_jaka_wrapper)/launch/zhw_jaka_wrapper.launch"/>
+    <group ns="zhw_jaka_ops">
+        <node name="shelf2cart_byMarkerId" pkg="zhw_jaka_ops" type="shelf2cart_byMarkerId.py" output="screen"></node>
+    </group>
+</launch>
