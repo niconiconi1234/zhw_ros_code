@@ -1,9 +1,0 @@
-float32[] pose
-
-# tool_num: 0~7
-int16 tool_num
-
----
-
-int16 ret
-string message

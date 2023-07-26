@@ -1,6 +1,0 @@
-<launch>
-    <include file="$(find zhw_jaka_wrapper)/launch/zhw_jaka_wrapper.launch"></include>
-    <group ns="zhw_smart_warehouse_pickup">
-        <node name="pick_by_name_server" pkg="zhw_smart_warehouse_pickup" type="pick_by_name.py"></node>
-    </group>
-</launch>

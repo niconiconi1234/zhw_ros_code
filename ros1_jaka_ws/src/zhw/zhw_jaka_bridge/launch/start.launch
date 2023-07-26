@@ -1,4 +1,0 @@
-<launch>
-    <include file="$(find jaka_ros_driver)/launch/start.launch"></include>
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"></include>
-</launch>

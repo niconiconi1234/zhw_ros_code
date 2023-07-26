@@ -1,5 +1,0 @@
-# 控制夹爪的张开程度，最大值为100，最小值为20
-int32 target_position
----
-bool success
-string message
