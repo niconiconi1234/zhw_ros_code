@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service MaskRCNN {
+    rpc maskrcnn (MaskRCNNRequest) returns (MaskRCNNResponse) {};
+}
+
+message MaskRCNNRequest {
+    bytes b_image = 1;
+}
+
+message MaskRCNNResponse {
+    bytes b_rois = 1;
+    bytes b_class_ids = 2;
+    bytes b_class_names= 3;
+    bytes b_scores= 4;
+    bytes b_masks= 5;
+}
