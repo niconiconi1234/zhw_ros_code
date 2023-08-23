@@ -4,4 +4,6 @@
     <group ns="zhw_jaka_ops">
         <node name="shelf2cart_byMarkerId" pkg="zhw_jaka_ops" type="shelf2cart_byMarkerId.py" output="screen"></node>
     </group>
+    <!-- Launch ROS Bridge Server -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
 </launch>
