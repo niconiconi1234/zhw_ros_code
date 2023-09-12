@@ -1,5 +1,5 @@
 <launch>
-    <arg name="camera_info_url" default="file:///home/fdse-arm/.ros/camera_info/head_camera.yaml"/>
+    <arg name="camera_info_url" default="file://$(env HOME)/.ros/camera_info/head_camera.yaml"/>
     <arg name="video_device" default="/dev/video4"/>
     <arg name="image_width" default="1280"/>
     <arg name="image_height" default="720"/>

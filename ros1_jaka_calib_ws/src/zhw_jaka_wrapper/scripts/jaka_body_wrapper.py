@@ -42,10 +42,10 @@ def handle_move_gripper_to_pose(req: JakaMoveGripperToPoseRequest) -> JakaMoveGr
         rospy.Duration(1.0)
     )
 
-    # 因为Link_6 -> gripper_frame的变换是0, 0, 0.15, 0, 0, pi/4，因此我们对target_pose进行相反变换
+    # 因为Link_6 -> gripper_frame的变换是0, 0, 0.15, 0, 0, -pi/4，因此我们对target_pose进行相反变换
     e = euler_from_quaternion([target_post_in_link_6.pose.orientation.x, target_post_in_link_6.pose.orientation.y,
                                target_post_in_link_6.pose.orientation.z, target_post_in_link_6.pose.orientation.w])
-    q = quaternion_from_euler(e[0], e[1], e[2] - 3.1415926 / 4)
+    q = quaternion_from_euler(e[0], e[1], e[2] + 3.1415926 / 4)
 
     # 修正后的target_pose在Link_6坐标系下的坐标
     target_pose_amend_in_link_6 = PoseStamped()

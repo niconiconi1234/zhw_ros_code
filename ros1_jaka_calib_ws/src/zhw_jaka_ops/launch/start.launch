@@ -1,7 +1,16 @@
 <launch>
-    <include file="$(find jaka_launch)/launch/start.launch"/>
+    <arg name="method" default="ar_track_alvar"></arg>
+    <arg name="use_rviz" default="true"></arg>
+    <arg name="video_device" default="/dev/video4"></arg>
+    <arg name="camera_info_url" default="file://$(env HOME)/.ros/camera_info/head_camera.yaml"></arg>
+    <include file="$(find jaka_launch)/launch/start.launch">
+        <arg name="method" value="$(arg method)"></arg>
+        <arg name="use_rviz" value="$(arg use_rviz)"></arg>
+        <arg name="video_device" value="$(arg video_device)"></arg>
+        <arg name="camera_info_url" value="$(arg camera_info_url)"></arg>
+    </include>
     <include file="$(find zhw_jaka_wrapper)/launch/zhw_jaka_wrapper.launch"/>
     <group ns="zhw_jaka_ops">
-        <node name="shelf2cart_byMarkerId" pkg="zhw_jaka_ops" type="shelf2cart_byMarkerId.py" output="screen"></node>
+        <node if="$(eval method=='ar_track_alvar')" name="shelf2cart_byMarkerId" pkg="zhw_jaka_ops" type="shelf2cart_byMarkerId.py" output="screen"></node>
     </group>
 </launch>

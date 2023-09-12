@@ -71,12 +71,12 @@ def handle_shelf2cart_byMarkerId(req: JakaPickByMarkerIdRequest):
         SetGripperTightnessOperation(tightness=SetGripperTightnessOperation.LOOSE),  # 首先释放夹爪
         MoveJointsOperation(joint_values=initial_joints),  # 移动机械臂关节到初始状态
         MoveGripperToPoseOperation(pose=[object_pose.pose.position.x+0.1, object_pose.pose.position.y,
-                                         object_pose.pose.position.z, 1.591, 0.034, -1.626]),  # 移动爪子到物体前方0.1米，准备抓取
+                                         object_pose.pose.position.z, -0.833, 1.541, 2.266]),  # 移动爪子到物体前方0.1米，准备抓取
         MoveGripperToPoseOperation(pose=[object_pose.pose.position.x, object_pose.pose.position.y,
-                                         object_pose.pose.position.z, 1.591, 0.034, -1.626]),  # 移动爪子到物体处，准备抓取
+                                         object_pose.pose.position.z, -0.833, 1.541, 2.266]),  # 移动爪子到物体处，准备抓取
         SetGripperTightnessOperation(tightness=SetGripperTightnessOperation.TIGHT),  # 抓取物体
         MoveGripperToPoseOperation(pose=[object_pose.pose.position.x, object_pose.pose.position.y,
-                                         object_pose.pose.position.z+0.05, 1.591, 0.034, -1.626]),  # 将物体抬起0.05米
+                                         object_pose.pose.position.z+0.05, -0.833, 1.541, 2.266]),  # 将物体抬起0.05米
         MoveJointsOperation(joint_values=initial_joints),  # 回到初始状态
         MoveJointsOperation(joint_values=release_joints),  # 将机械臂移动到释放物体的状态
         SetGripperTightnessOperation(tightness=SetGripperTightnessOperation.LOOSE),  # 释放物体

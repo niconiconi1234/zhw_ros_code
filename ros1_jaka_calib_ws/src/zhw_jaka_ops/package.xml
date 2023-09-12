@@ -65,6 +65,10 @@
   <exec_depend>zhw_jaka_wrapper</exec_depend>
   <exec_depend>zhw_jaka_msgs</exec_depend>
 
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
