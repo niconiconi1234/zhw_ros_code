@@ -10,7 +10,7 @@ RUN bash -c \
 source /opt/ros/noetic/setup.bash && \
 rosdep install --from-paths src --ignore-src -r -y && \
 apt-get install ros-noetic-moveit-visual-tools python3-pip -y && \
-pip install Pillow"
+pip install Pillow redis==5.0.1"
 RUN bash -c \
 "source /opt/ros/noetic/setup.bash && \
 catkin_make"

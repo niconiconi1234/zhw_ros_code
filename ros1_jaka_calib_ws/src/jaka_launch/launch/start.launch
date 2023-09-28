@@ -14,18 +14,23 @@
         <arg name="use_rviz" value="$(arg use_rviz)" />
     </include>
     <!-- 发布机械臂的爪子和Link_6的关系(通过尺子测量得到) -->
-    <node name="link6_to_gripper_transform_publisher" pkg="tf2_ros" type="static_transform_publisher" output="screen" args="0 0 0.130 -0.7853981633974483 0 0 Link_6 gripper_frame" />
+    <node name="link6_to_gripper_transform_publisher" pkg="tf2_ros"
+        type="static_transform_publisher" output="screen"
+        args="0 0 0.130 -0.7853981633974483 0 0 Link_6 gripper_frame" />
     <!-- 发布机械臂的相机和Link_6的关系(通过手眼标定得到的一组参数)-->
-    <node pkg="tf" type="static_transform_publisher" name="end_to_cam_pub" args="0.00148006 0.0414345 0.0343792 -2.2944796478418255 -0.007203986113946755 -0.08313125400296631 Link_6 camera_frame 100" />
+    <node pkg="tf" type="static_transform_publisher" name="end_to_cam_pub"
+        args="0.000317825 0.0458726 0.0346092 -2.309943265014495 -0.0071346616360575404 -0.011986764223064376 Link_6 camera_frame 100" />
     <!-- aruco usb cam -->
     <include file="$(find handeye-calib)/launch/aruco/aruco_start_usb_cam.launch" if="$(arg aruco)" />
     <!-- ar_track_alvar usb cam -->
-    <include file="$(find jaka_launch)/launch/ar_track_alvar_start_usb_cam.launch" if="$(eval method=='ar_track_alvar')" >
+    <include file="$(find jaka_launch)/launch/ar_track_alvar_start_usb_cam.launch"
+        if="$(eval method=='ar_track_alvar')">
         <arg name="video_device" value="$(arg video_device)" />
         <arg name="camera_info_url" value="$(arg camera_info_url)" />
     </include>
     <!-- maskrcnn_grapsnet realsense -->
-    <include file="$(find jaka_launch)/launch/maskrcnn_graspnet_start_realsense.launch" if="$(eval method=='maskrcnn_graspnet')" />
+    <include file="$(find jaka_launch)/launch/maskrcnn_graspnet_start_realsense.launch"
+        if="$(eval method=='maskrcnn_graspnet')" />
     <!-- rosbridge_server-->
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 </launch>
